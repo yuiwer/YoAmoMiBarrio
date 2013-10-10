@@ -1,12 +1,335 @@
-/* 
-    Document   : estilo
-    Created on : 10/10/2013, 15:12:26
-    Author     : UsuarioHi
-    Description:
-        Purpose of the stylesheet follows.
-*/
+@import url('reset.css');
+@import url('fuentes.css');
 
-root { 
-    display: block;
+/***mapa***/
+
+#mapa {
+
+	float: right;
 }
 
+/*******datos*******/
+
+#datos {
+	background-color: #fff;
+}
+
+#datos p span {
+
+	font-size: 15px;
+	font-weight: 900;
+}
+
+#nos {
+	float: right;	
+	width: 350px;
+	color: #fff;
+	background-color: blue;
+	padding: 2px; 
+}
+
+
+#social {
+
+  background-color: #fff;
+}
+
+
+#social p {
+
+  
+  margin-bottom: 15px;
+}
+
+#social p a {
+	margin-left: 15px;
+
+}
+
+#social > p span {
+  
+  margin-bottom: 5px;
+  margin-left: 50px;
+ 
+}
+
+#slider3 {
+	float: right;
+	width: 350px;
+/*	height: 50px; no me lo deja fijar q onda?*/
+
+}
+
+/******header******/
+
+
+header {
+
+	margin-top: 30px;
+	background-color: #fff;
+	;
+}
+
+
+header a:hover {
+	text-decoration: underline; color: #fff;
+}
+
+#buscar {
+	position: fixed;
+	top: 112px;
+	left: 1018px;
+}
+
+/*****Logo*****/
+
+
+
+#logo {
+	float: left;
+	height: 127px;
+	overflow: hidden;
+}
+#logo img {
+	height: 100px;
+
+}
+
+#logo2 {
+	height: 145px;
+
+}
+
+
+
+
+/********he2**********/
+
+#he2 {
+	margin-top: 20px;
+}
+
+#he3 {
+	/*margin-right: 15px;*/
+}
+
+#he3 button {
+	margin-top: 10px;
+}
+/*******slider**********/
+
+.cubo {
+	
+	overflow: hidden;
+	width: 1200px;
+	height: 300px;
+	background-color: #fff;
+	
+}
+
+.cubo img {
+	float: left;
+	margin-left: 70px;
+	margin-top: -60px;
+}
+
+
+.cubo1 {
+	
+	overflow: hidden;
+	width: 1200px;
+	height: 300px;
+	background-color: #fff;
+}
+.cubo1 img {
+	float: left;
+	margin-left: 50px;
+	margin-top: -40px;
+}
+.cubo1 p {
+	float: left;
+	color: #fff;
+	margin-top: 25px;
+	margin-left: 20px;
+	font-family: ubuntu, arial;
+	font-size: 25px;
+	padding: 5px;
+	/*background-color: #F70707;*/
+	
+}
+
+.cubo2 {
+	
+	overflow: hidden;
+	width: 1200px;
+	height: 300px;
+	background-color: #fff;
+}
+
+.cubo2 img {
+	float: right;
+	margin-right: 150px;
+	margin-top: -30px;
+}
+.cubo2 p {
+	float: left;
+	color: #000;
+	margin-top: 25px;
+	margin-left: 49px;
+	font-family: ubuntu, arial;
+	font-size: 25px;
+	padding: 5px;
+}
+#p4 {
+	margin-top: 50px;
+	margin-left: 100px;	
+}
+
+/***********dthumnail***********/
+
+.thumbnail > img {
+
+	margin: auto;
+	background-color: #fff;
+	overflow: hidden;
+	height: 200px;
+	width: 400px;
+}
+
+
+/*************accordion **************/
+
+#accordion {
+
+	background-color: #fff;
+}
+#accordion a {
+
+	text-decoration: none;
+	font-weight: 900;
+
+}
+.panel-title {
+	
+}
+
+
+ #tec{
+ 	background:#00cccc;
+  	color: black;
+  	width: 1140px;
+  	height: 300px;
+  	
+}
+
+#lin {
+	position:absolute;
+	left:20px;
+	top:-20px;
+	font-size: 100px;
+ 	font-weight: 700;
+  	letter-spacing: -.06em;
+}
+#apa {
+	position:absolute;
+	left:260px;
+	top: 130px;
+	color: #FFF200;
+	font-weight: 900;
+	font-size: 50px;
+	font-family: capsula,sans-serif;
+
+}
+#ope {
+	position:absolute;
+	left:210px;
+	top: 55px;
+	-ms-transform: rotate(90deg);
+  	-webkit-transform: rotate(90deg);
+  	-moz-transform: rotate(90deg);
+  	-o-transform: rotate(90deg);
+  	transform: rotate(90deg);
+  	letter-spacing: -.04em;
+  	font-size: 30px;
+  	color: #000;
+}
+#win {
+	position:absolute;
+	left:490px;
+	top:100px;
+	font-size: 120px;
+ 	font-weight: 600;
+  	letter-spacing: -.06em;  
+  	color: #000;	
+  	
+}
+
+#nag {
+	position:absolute;
+	left:995px;
+	top: -10px;
+	font-size: 50px;
+ 	font-weight: 600;
+  	letter-spacing: .09em;  
+  	color: #000;	
+  	font-weight: 400;
+	font-size: 50px;
+	font-family: opensans,sans-serif;
+}
+#ubuntu {
+	position:absolute;
+	left:300px;
+	top: -10px;
+	font-size: 30px;
+ 	font-weight: 600;
+  	/*letter-spacing: .09em;*/  
+  	color: #000;	
+  	font-weight: 400;
+	font-size: 50px;
+	font-family: ubuntu,sans-serif;
+}
+#act {
+	position:absolute;
+	left:300px;
+	top: 40px;
+	letter-spacing: -.02em;
+  	font-size: 30px;
+  	color: #000;
+}
+
+#my {
+	position:absolute;
+	left:300px;
+	top: 65px;
+	letter-spacing: :;em;
+  	font-size: 60px;
+  	color: #000;
+  	font-weight: 800;
+  	font-family: opensans,sans-serif;
+}
+
+#ora {
+	position:absolute;
+	left:700px;
+	top: 50px;
+	font-size: 70px;
+ 	font-weight: 600;
+  	letter-spacing: .04em;  
+  	color: #000;	
+  	font-weight: 400;
+	font-size: 50px;
+	font-family: opensans,sans-serif;
+}
+#js {
+	position:absolute;
+	left:395px;
+	top: 140px;
+	-ms-transform: rotate(90deg);
+  	-webkit-transform: rotate(90deg);
+  	-moz-transform: rotate(90deg);
+  	-o-transform: rotate(90deg);
+  	transform: rotate(90deg);
+  	letter-spacing: .1em;
+  	font-size: 30px;
+  	color: #000;
+}
