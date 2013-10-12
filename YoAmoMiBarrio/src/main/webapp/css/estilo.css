@@ -76,8 +76,8 @@ header a:hover {
 }
 
 #buscar {
-	position: fixed;
-	top: 112px;
+	/*position: fixed;*/
+	margin-top: 50px;
 	left: 1018px;
 }
 
