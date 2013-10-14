@@ -1,0 +1,465 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.5
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 09-04-2013 a las 21:27:04
+-- Versión del servidor: 5.0.96-community-log
+-- Versión de PHP: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `cenit_yoamo2012`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `barrio`
+--
+
+CREATE TABLE IF NOT EXISTS `barrio` (
+  `id_barrio` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`id_barrio`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=47 ;
+
+--
+-- Volcado de datos para la tabla `barrio`
+--
+
+INSERT INTO `barrio` (`id_barrio`, `descripcion`) VALUES
+(1, 'Agronomia'),
+(2, 'Almagro'),
+(3, 'Balvanera'),
+(4, 'Barracas'),
+(5, 'Belgrano'),
+(6, 'Boedo'),
+(7, 'Caballito'),
+(8, 'Chacarita'),
+(9, 'Coghlan'),
+(10, 'Colegiales'),
+(11, 'Constitucion'),
+(12, 'Flores'),
+(13, 'Floresta'),
+(14, 'La Boca'),
+(15, 'La Paternal'),
+(16, 'Liniers'),
+(17, 'Mataderos'),
+(18, 'Monte Castro'),
+(19, 'Montserrat'),
+(20, 'Nueva Pompeya'),
+(21, 'Nuñez'),
+(22, 'Palermo'),
+(23, 'Parque Avellaneda'),
+(24, 'Parque Chacabuco'),
+(25, 'Parque Chas'),
+(26, 'Parque Patricios'),
+(27, 'Puerto Madero'),
+(28, 'Recoleta'),
+(29, 'Retiro'),
+(30, 'Saavedra'),
+(31, 'San Cristobal'),
+(32, 'San Nicolas'),
+(33, 'San Telmo'),
+(34, 'Velez Sarsfield'),
+(35, 'Versalles'),
+(36, 'Villa Crespo'),
+(37, 'Villa del Parque'),
+(38, 'Villa Devoto'),
+(39, 'Villa General Mitre'),
+(40, 'Villa Lugano'),
+(41, 'Villa Luro'),
+(42, 'Villa Ortuzar'),
+(43, 'Villa Pueyrredon'),
+(44, 'Villa Santa Rita'),
+(45, 'Villa Soldati'),
+(46, 'Villa Urquiza');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `barrio_palabra_clave`
+--
+
+CREATE TABLE IF NOT EXISTS `barrio_palabra_clave` (
+  `id_barrio` smallint(6) NOT NULL,
+  `id_palabra_clave` int(11) NOT NULL,
+  PRIMARY KEY  (`id_barrio`,`id_palabra_clave`),
+  KEY `FK_id_palabra_clave_01` (`id_palabra_clave`,`id_barrio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `barrio_palabra_clave`
+--
+
+INSERT INTO `barrio_palabra_clave` (`id_barrio`, `id_palabra_clave`) VALUES
+(1, 0),
+(2, 0),
+(4, 29),
+(6, 0),
+(12, 0),
+(14, 0),
+(16, 0),
+(18, 0),
+(19, 0),
+(42, 0),
+(46, 0),
+(46, 37);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `local`
+--
+
+CREATE TABLE IF NOT EXISTS `local` (
+  `id_local` smallint(6) NOT NULL auto_increment,
+  `razon_social` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `direccion` varchar(50) collate utf8_unicode_ci NOT NULL,
+  `telefono` varchar(15) collate utf8_unicode_ci default NULL,
+  `telefono2` varchar(15) collate utf8_unicode_ci default NULL,
+  `celular` varchar(15) collate utf8_unicode_ci default NULL,
+  `paginaweb` varchar(50) collate utf8_unicode_ci default NULL,
+  `mail` varchar(50) collate utf8_unicode_ci default NULL,
+  `chat` varchar(50) collate utf8_unicode_ci default NULL,
+  `redesociales_fb` varchar(50) collate utf8_unicode_ci default NULL,
+  `redesociales_tw` varchar(50) collate utf8_unicode_ci default NULL,
+  `redesociales_gm` varchar(50) collate utf8_unicode_ci default NULL,
+  `foto` varchar(50) collate utf8_unicode_ci default NULL,
+  `descripcion` varchar(30) collate utf8_unicode_ci default NULL,
+  `id_subrubro` smallint(6) NOT NULL,
+  `id_barrio` smallint(6) NOT NULL,
+  `fecha` date default NULL,
+  PRIMARY KEY  (`id_local`),
+  KEY `FK_id_subrubro_01` (`id_subrubro`),
+  KEY `FK_id_barrio_02` (`id_barrio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `local_palabra_clave`
+--
+
+CREATE TABLE IF NOT EXISTS `local_palabra_clave` (
+  `id_local` smallint(6) NOT NULL,
+  `id_palabra_clave` int(11) NOT NULL,
+  PRIMARY KEY  (`id_local`,`id_palabra_clave`),
+  KEY `FK_id_palabra_clave_02` (`id_palabra_clave`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `local_servicio`
+--
+
+CREATE TABLE IF NOT EXISTS `local_servicio` (
+  `id_local` smallint(6) NOT NULL,
+  `id_servicio` smallint(6) NOT NULL,
+  PRIMARY KEY  (`id_local`,`id_servicio`),
+  KEY `FK_id_servicio_01` (`id_servicio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `medio_pago`
+--
+
+CREATE TABLE IF NOT EXISTS `medio_pago` (
+  `id_pago` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `icono` varchar(100) collate utf8_unicode_ci NOT NULL,
+  `nota` varchar(30) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id_pago`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `palabra_clave`
+--
+
+CREATE TABLE IF NOT EXISTS `palabra_clave` (
+  `id_palabra` int(11) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `nota` varchar(100) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id_palabra`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=52 ;
+
+--
+-- Volcado de datos para la tabla `palabra_clave`
+--
+
+INSERT INTO `palabra_clave` (`id_palabra`, `descripcion`, `nota`) VALUES
+(1, 'pendrive', NULL),
+(2, 'inmobiliaria', NULL),
+(3, 'gato', NULL),
+(4, 'martillo', NULL),
+(5, 'masa', NULL),
+(6, 'sol', NULL),
+(7, 'ventana', NULL),
+(8, 'botella', NULL),
+(9, 'dedal', NULL),
+(10, 'sombrero', NULL),
+(11, 'coche', NULL),
+(12, 'barco', NULL),
+(13, 'carretilla', NULL),
+(14, 'plancha', NULL),
+(15, 'perro', NULL),
+(16, 'iphone', NULL),
+(17, 'escritorio', NULL),
+(18, 'cuadro', NULL),
+(19, 'cama', NULL),
+(20, 'puerta', NULL),
+(21, 'marco', NULL),
+(22, 'caja', NULL),
+(23, 'cortina', NULL),
+(24, 'heladera', NULL),
+(25, 'microondas', NULL),
+(26, 'led', NULL),
+(27, 'libro', NULL),
+(28, 'jean', NULL),
+(29, 'camisa', NULL),
+(30, 'vela', NULL),
+(31, 'dvd', NULL),
+(32, 'pila', NULL),
+(33, 'router', NULL),
+(34, 'cuaderno', NULL),
+(35, 'valde', NULL),
+(36, 'pulverizador', NULL),
+(37, 'perfume', NULL),
+(38, 'desodorante', NULL),
+(39, 'hinodoro', NULL),
+(40, 'bañadera', NULL),
+(41, 'mesada', NULL),
+(42, 'espejo', NULL),
+(43, 'hoja', NULL),
+(44, 'joyeria', NULL),
+(45, 'jugueteria', NULL),
+(46, 'libreria', NULL),
+(47, 'muebleria', NULL),
+(48, 'funeraria', NULL),
+(49, 'escuela', NULL),
+(50, 'veterinaria', NULL),
+(51, 'zapateria', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `palabra_clave_faltante`
+--
+
+CREATE TABLE IF NOT EXISTS `palabra_clave_faltante` (
+  `id_palabra` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `nota` varchar(100) collate utf8_unicode_ci default NULL,
+  `id_barrio` smallint(6) NOT NULL,
+  PRIMARY KEY  (`id_palabra`),
+  KEY `FK_id_barrio_03` (`id_barrio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rubro`
+--
+
+CREATE TABLE IF NOT EXISTS `rubro` (
+  `id_rubro` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `id_seccion` smallint(6) NOT NULL,
+  PRIMARY KEY  (`id_rubro`),
+  KEY `FK_id_seccion_01` (`id_seccion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+
+--
+-- Volcado de datos para la tabla `rubro`
+--
+
+INSERT INTO `rubro` (`id_rubro`, `descripcion`, `id_seccion`) VALUES
+(1, 'dentista', 1),
+(2, 'abogado', 1),
+(3, 'contador', 1),
+(4, 'agrimensor', 1),
+(5, 'arquitecto', 1),
+(6, 'escribano', 1),
+(7, 'grafologo', 1),
+(8, 'martillero', 1),
+(9, 'podologo', 1),
+(10, 'traductor', 1),
+(11, 'sexologo', 1),
+(12, 'psicologo', 1),
+(13, 'taxidermista', 1),
+(14, 'profesor', 1),
+(15, 'plomero', 3),
+(16, 'gasista', 3),
+(17, 'electrisista', 3),
+(18, 'costurero', 3),
+(19, 'masajista', 3),
+(20, 'albañil', 3),
+(21, 'tecnico de pc', 3),
+(22, 'tecnico de aire acondicionado', 3),
+(23, 'mecanico', 3),
+(24, 'sastre', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seccion`
+--
+
+CREATE TABLE IF NOT EXISTS `seccion` (
+  `id_seccion` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`id_seccion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `seccion`
+--
+
+INSERT INTO `seccion` (`id_seccion`, `descripcion`) VALUES
+(1, 'Profesionales'),
+(2, 'Locales'),
+(3, 'Servicios');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicio`
+--
+
+CREATE TABLE IF NOT EXISTS `servicio` (
+  `id_palabra` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `nota` varchar(100) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id_palabra`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subrubro`
+--
+
+CREATE TABLE IF NOT EXISTS `subrubro` (
+  `id_subrubro` smallint(6) NOT NULL auto_increment,
+  `descripcion` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `id_rubro` smallint(6) NOT NULL,
+  PRIMARY KEY  (`id_subrubro`),
+  KEY `FK_id_rubro_01` (`id_rubro`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subrubro_palabra_clave`
+--
+
+CREATE TABLE IF NOT EXISTS `subrubro_palabra_clave` (
+  `id_subrubro` smallint(6) NOT NULL,
+  `id_palabra_clave` int(11) NOT NULL,
+  PRIMARY KEY  (`id_subrubro`,`id_palabra_clave`),
+  KEY `FK_id_palabra_clave_03` (`id_palabra_clave`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subrubro_servicio`
+--
+
+CREATE TABLE IF NOT EXISTS `subrubro_servicio` (
+  `id_subrubro` smallint(6) NOT NULL,
+  `id_servicio` smallint(6) NOT NULL,
+  PRIMARY KEY  (`id_subrubro`,`id_servicio`),
+  KEY `FK_id_servicio_02` (`id_servicio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `dni` int(11) NOT NULL,
+  `nombre` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `apellido` varchar(30) collate utf8_unicode_ci NOT NULL,
+  `celular` varchar(15) collate utf8_unicode_ci NOT NULL,
+  `mail` varchar(40) collate utf8_unicode_ci NOT NULL,
+  `chat` varchar(40) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`dni`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `local`
+--
+ALTER TABLE `local`
+  ADD CONSTRAINT `FK_id_barrio_02` FOREIGN KEY (`id_barrio`) REFERENCES `barrio` (`id_barrio`),
+  ADD CONSTRAINT `FK_id_subrubro_01` FOREIGN KEY (`id_subrubro`) REFERENCES `subrubro` (`id_subrubro`);
+
+--
+-- Filtros para la tabla `local_palabra_clave`
+--
+ALTER TABLE `local_palabra_clave`
+  ADD CONSTRAINT `FK_id_local_01` FOREIGN KEY (`id_local`) REFERENCES `local` (`id_local`),
+  ADD CONSTRAINT `FK_id_palabra_clave_02` FOREIGN KEY (`id_palabra_clave`) REFERENCES `palabra_clave` (`id_palabra`);
+
+--
+-- Filtros para la tabla `local_servicio`
+--
+ALTER TABLE `local_servicio`
+  ADD CONSTRAINT `FK_id_local_02` FOREIGN KEY (`id_local`) REFERENCES `local` (`id_local`),
+  ADD CONSTRAINT `FK_id_servicio_01` FOREIGN KEY (`id_servicio`) REFERENCES `servicio` (`id_palabra`);
+
+--
+-- Filtros para la tabla `palabra_clave_faltante`
+--
+ALTER TABLE `palabra_clave_faltante`
+  ADD CONSTRAINT `FK_id_barrio_03` FOREIGN KEY (`id_barrio`) REFERENCES `barrio` (`id_barrio`);
+
+--
+-- Filtros para la tabla `rubro`
+--
+ALTER TABLE `rubro`
+  ADD CONSTRAINT `FK_id_seccion_01` FOREIGN KEY (`id_seccion`) REFERENCES `seccion` (`id_seccion`);
+
+--
+-- Filtros para la tabla `subrubro`
+--
+ALTER TABLE `subrubro`
+  ADD CONSTRAINT `FK_id_rubro_01` FOREIGN KEY (`id_rubro`) REFERENCES `rubro` (`id_rubro`);
+
+--
+-- Filtros para la tabla `subrubro_palabra_clave`
+--
+ALTER TABLE `subrubro_palabra_clave`
+  ADD CONSTRAINT `FK_id_palabra_clave_03` FOREIGN KEY (`id_palabra_clave`) REFERENCES `palabra_clave` (`id_palabra`),
+  ADD CONSTRAINT `FK_id_subrubro_02` FOREIGN KEY (`id_subrubro`) REFERENCES `subrubro` (`id_subrubro`);
+
+--
+-- Filtros para la tabla `subrubro_servicio`
+--
+ALTER TABLE `subrubro_servicio`
+  ADD CONSTRAINT `FK_id_servicio_02` FOREIGN KEY (`id_servicio`) REFERENCES `servicio` (`id_palabra`),
+  ADD CONSTRAINT `FK_id_subrubro_03` FOREIGN KEY (`id_subrubro`) REFERENCES `subrubro` (`id_subrubro`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
