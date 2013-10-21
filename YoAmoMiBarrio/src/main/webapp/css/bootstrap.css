@@ -3921,7 +3921,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #428BCA;
+  background-color: #428bca;
 }
 
 .nav-stacked > li {
@@ -5028,6 +5028,7 @@ a.thumbnail:focus {
   color: #468847;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+  
 }
 
 .alert-success hr {
@@ -6144,7 +6145,7 @@ body.modal-open,
   margin: 1px;
   text-indent: -999px;
   cursor: pointer;
-  border: 1px solid #ffffff;
+  border: 1px solid #000;
   border-radius: 10px;
 }
 
@@ -6152,7 +6153,7 @@ body.modal-open,
   width: 12px;
   height: 12px;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #000;
 }
 
 .carousel-caption {
