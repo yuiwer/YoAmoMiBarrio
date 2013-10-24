@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/10/2013 23:06:19 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="yoamo" name="ar.com.yoamomibarrio.model.PalabraClaveV" table="palabra_clave_v">
+    <id name="idPalabra" type="java.lang.Integer">
+      <column name="ID_PALABRA"/>
+      <generator class="identity"/>
+    </id>
+    <property name="descripcion" type="string">
+      <column length="30" name="DESCRIPCION" not-null="true"/>
+    </property>
+    <property name="nota" type="string">
+      <column length="100" name="NOTA"/>
+    </property>
+  </class>
+</hibernate-mapping>

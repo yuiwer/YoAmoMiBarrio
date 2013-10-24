@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>  
+  <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://ec2-50-19-213-178.compute-1.amazonaws.com:3306/yoamo?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">yuiwer</property>
     <property name="hibernate.connection.password">yuiwer</property>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveH.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveY.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/MedioPago.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/LocalPromocion.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Promocion.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveZ.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveD.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveE.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveG.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveU.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Usuario.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveM.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/SubrubroPalabraClave.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveR.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveK.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Barrio.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveI.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveN.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/LocalPalabraClave.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Local.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveX.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveO.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Rubro.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveL.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveQ.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Seccion.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveFaltante.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveC.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveA.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveV.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Servicio.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveF.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveJ.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveW.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/BarrioPalabraClave.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveP.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveB.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/LocalMedioPago.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveT.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/Subrubro.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/PalabraClaveS.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/UsuarioLocal.hbm.xml"/>
+    <mapping resource="ar/com/yoamomibarrio/hbm/LocalServicio.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

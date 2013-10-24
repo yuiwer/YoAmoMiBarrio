@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/10/2013 23:06:19 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="yoamo" name="ar.com.yoamomibarrio.model.Usuario" table="usuario">
+    <id name="idUsuario" type="int">
+      <column name="ID_USUARIO"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="dni" type="int">
+      <column name="DNI" not-null="true"/>
+    </property>
+    <property name="nombre" type="string">
+      <column length="30" name="NOMBRE" not-null="true"/>
+    </property>
+    <property name="apellido" type="string">
+      <column length="30" name="APELLIDO" not-null="true"/>
+    </property>
+    <property name="celular" type="string">
+      <column length="15" name="CELULAR" not-null="true"/>
+    </property>
+    <property name="mail" type="string">
+      <column length="40" name="MAIL" not-null="true"/>
+    </property>
+    <property name="chat" type="string">
+      <column length="40" name="CHAT" not-null="true"/>
+    </property>
+    <property name="password" type="int">
+      <column name="PASSWORD" not-null="true"/>
+    </property>
+    <set inverse="true" name="usuarioLocals">
+      <key>
+        <column name="ID_USUARIO" not-null="true"/>
+      </key>
+      <one-to-many class="ar.com.yoamomibarrio.model.UsuarioLocal"/>
+    </set>
+  </class>
+</hibernate-mapping>

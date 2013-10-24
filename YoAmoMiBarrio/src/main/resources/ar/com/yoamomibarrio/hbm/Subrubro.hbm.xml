@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/10/2013 23:06:19 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="yoamo" name="ar.com.yoamomibarrio.model.Subrubro" table="subrubro">
+    <id name="idSubrubro" type="java.lang.Short">
+      <column name="ID_SUBRUBRO"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="ar.com.yoamomibarrio.model.Rubro" fetch="select" name="rubro">
+      <column name="ID_RUBRO" not-null="true"/>
+    </many-to-one>
+    <property name="descripcion" type="string">
+      <column length="30" name="DESCRIPCION" not-null="true"/>
+    </property>
+    <set inverse="true" name="subrubroPalabraClaves">
+      <key>
+        <column name="ID_SUBRUBRO" not-null="true"/>
+      </key>
+      <one-to-many class="ar.com.yoamomibarrio.model.SubrubroPalabraClave"/>
+    </set>
+  </class>
+</hibernate-mapping>

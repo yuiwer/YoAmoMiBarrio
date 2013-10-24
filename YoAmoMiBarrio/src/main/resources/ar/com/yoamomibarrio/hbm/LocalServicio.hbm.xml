@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/10/2013 20:11:00 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="ar.com.yoamomibarrio.model.LocalServicio" table="local_servicio" catalog="yoamo">
+        <composite-id name="id" class="ar.com.yoamomibarrio.model.LocalServicioId">
+            <key-property name="idLocal" type="short">
+                <column name="ID_LOCAL" />
+            </key-property>
+            <key-property name="idServicio" type="short">
+                <column name="ID_SERVICIO" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

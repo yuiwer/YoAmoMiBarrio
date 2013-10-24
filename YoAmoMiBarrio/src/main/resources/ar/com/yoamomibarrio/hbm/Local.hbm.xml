@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/10/2013 23:06:19 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="yoamo" name="ar.com.yoamomibarrio.model.Local" table="local">
+    <id name="idLocal" type="long">
+      <column name="ID_LOCAL"/>
+      <generator class="identity"/>
+    </id>
+    <property name="razonSocial" type="string">
+      <column length="30" name="RAZON_SOCIAL" not-null="true"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="50" name="DIRECCION" not-null="true"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="15" name="TELEFONO"/>
+    </property>
+    <property name="telefono2" type="string">
+      <column length="15" name="TELEFONO2"/>
+    </property>
+    <property name="celular" type="string">
+      <column length="15" name="CELULAR"/>
+    </property>
+    <property name="paginaweb" type="string">
+      <column length="50" name="PAGINAWEB"/>
+    </property>
+    <property name="mail" type="string">
+      <column length="50" name="MAIL"/>
+    </property>
+    <property name="chat" type="string">
+      <column length="50" name="CHAT"/>
+    </property>
+    <property name="redesocialesFb" type="string">
+      <column length="50" name="REDESOCIALES_FB"/>
+    </property>
+    <property name="redesocialesTw" type="string">
+      <column length="50" name="REDESOCIALES_TW"/>
+    </property>
+    <property name="redesocialesGm" type="string">
+      <column length="50" name="REDESOCIALES_GM"/>
+    </property>
+    <property name="foto" type="string">
+      <column length="50" name="FOTO"/>
+    </property>
+    <property name="descripcion" type="string">
+      <column length="30" name="DESCRIPCION"/>
+    </property>
+    <property name="idSubrubro" type="short">
+      <column name="ID_SUBRUBRO" not-null="true"/>
+    </property>
+    <property name="idBarrio" type="short">
+      <column name="ID_BARRIO" not-null="true"/>
+    </property>
+    <property name="fecha" type="date">
+      <column length="10" name="FECHA"/>
+    </property>
+    
+    <set inverse="true" name="localPalabraClaves">
+      <key>
+        <column name="ID_LOCAL" not-null="true"/>
+      </key>
+      <one-to-many class="ar.com.yoamomibarrio.model.LocalPalabraClave"/>
+    </set>
+  </class>
+</hibernate-mapping>

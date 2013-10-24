@@ -19,6 +19,11 @@
     </global-forwards>
 
     <action-mappings>
+        <action parameter="do" path="/actionAdministrador" type="ar.com.yoamomibarrio.action.administrador.AdministradorAction"/>
+        <action parameter="do" path="/actionCommon" type="ar.com.yoamomibarrio.action.CommonAction"/>
+        <action parameter="do" path="/actionLocal" type="ar.com.yoamomibarrio.action.local.LocalAction">
+            <forward name="local" path="/local/local.jsp"/>
+        </action>
         
     </action-mappings>
     
