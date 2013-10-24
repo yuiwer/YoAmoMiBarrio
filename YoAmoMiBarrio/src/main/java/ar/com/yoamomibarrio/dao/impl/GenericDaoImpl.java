@@ -14,6 +14,7 @@ import org.hibernate.Session;
 /**
  *
  * @author Matias
+ * @param <T>
  */
 public abstract class GenericDaoImpl<T> implements GenericDao<T>{
     
@@ -26,16 +27,15 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T>{
 	
 	protected String getClassName()
 	{
-		return type.getName();
+		return type.getName(); 
 	}
 
 	@SuppressWarnings("unchecked")
 	public GenericDaoImpl()
 	{
-		Type t = getClass().getGenericSuperclass();
-		//ParameterizedType pt = (ParameterizedType) t;
-                System.out.println(t);
-		type = (Class)t;
+		Type t = getClass().getGenericSuperclass();				
+                ParameterizedType p = (ParameterizedType)t;
+                type = (Class) p.getActualTypeArguments()[0];
 	}
 
 	

@@ -4,10 +4,12 @@
  */
 package ar.com.yoamomibarrio.dao.impl;
 
+import ar.com.yoamomibarrio.model.Local;
+
 /**
  *
  * @author Matias
  */
-public class Local extends GenericDaoImpl{
+public class LocalDao extends GenericDaoImpl<Local>{
     
 }
