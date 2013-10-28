@@ -95,13 +95,13 @@
                 <div class="panel-body">
                   
                   <div id="nos"> <p>${local.descripcion}</p></div>
-                  <p> <span>Direccion:</span>${local.direccion}</p> <br> 
+                  <p> <span>Direccion: </span>${local.direccion}</p> <br> 
                   <!-- aca podria poner los iconos en vez de los titulos -->
 
-                  <p> <span>Telefono:</span> ${local.telefono}</p> <br>
-                  <p> <span>Mail:</span> ${local.mail}</p> <br>
-                  <a href="#">  <p>${local.paginaweb}</p> </a> <br>
-                  <p> <span>algo mas:</span> ????????</p> <br>
+                  <p> <span>Telefono: </span> ${local.telefono}</p> <br>
+                  <p> <span>Mail: </span> ${local.mail}</p> <br>
+                  <a href="#"><p><span>Web: </span>${local.paginaweb}</p> </a> <br>
+                  <p> <span>algo mas: </span> ????????</p> <br>
                   <section id="social">
                     <p>  
                         <a href="https://www.facebook.com/${local.redesocialesFb}" target="_blank"><img src="img/social/fb.png" width="45" alt="some_text"></a>
