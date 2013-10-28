@@ -55,7 +55,12 @@
     <property name="fecha" type="date">
       <column length="10" name="FECHA"/>
     </property>
-    
+    <property name="latitud" type="float">
+        <column name="LATITUD"/>
+    </property>
+    <property name="longitud" type="float">
+        <column name="LONGITUD"/>
+    </property>
     <set inverse="true" name="localPalabraClaves">
       <key>
         <column name="ID_LOCAL" not-null="true"/>

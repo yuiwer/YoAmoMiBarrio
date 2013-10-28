@@ -29,13 +29,36 @@ public class Local  implements java.io.Serializable {
      private short idSubrubro;
      private short idBarrio;
      private Date fecha;
+     private Float latitud;
+     private Float longitud;
      private Set servicios = new HashSet(0);
      private Set localPalabraClaves = new HashSet(0);
 
     public Local() {
     }
 
-	
+    public Local(Long idLocal, String razonSocial, String direccion, String telefono, String telefono2, String celular, String paginaweb, String mail, String chat, String redesocialesFb, String redesocialesTw, String redesocialesGm, String foto, String descripcion, short idSubrubro, short idBarrio, Date fecha, Float latitud, Float longitud) {
+        this.idLocal = idLocal;
+        this.razonSocial = razonSocial;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.telefono2 = telefono2;
+        this.celular = celular;
+        this.paginaweb = paginaweb;
+        this.mail = mail;
+        this.chat = chat;
+        this.redesocialesFb = redesocialesFb;
+        this.redesocialesTw = redesocialesTw;
+        this.redesocialesGm = redesocialesGm;
+        this.foto = foto;
+        this.descripcion = descripcion;
+        this.idSubrubro = idSubrubro;
+        this.idBarrio = idBarrio;
+        this.fecha = fecha;
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }    
+    
     public Local(String razonSocial, String direccion, short idSubrubro, short idBarrio) {
         this.razonSocial = razonSocial;
         this.direccion = direccion;
@@ -182,6 +205,23 @@ public class Local  implements java.io.Serializable {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public Float getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Float latitud) {
+        this.latitud = latitud;
+    }
+
+    public Float getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Float longitud) {
+        this.longitud = longitud;
+    }    
+    
     public Set getServicios() {
         return this.servicios;
     }
